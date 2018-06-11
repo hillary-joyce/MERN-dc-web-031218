@@ -18,9 +18,7 @@ const VAParksSchema = new Schema({
   camping: { type: Boolean },
   comments: [
     {
-      //Store ObjectIds in the array
       type: Schema.Types.ObjectId,
-      //The ObjectIds will ferer to the ids in the comment model
       ref: "Comment"
     }
   ]

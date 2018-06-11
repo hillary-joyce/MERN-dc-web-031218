@@ -5,6 +5,7 @@ const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const db = require("./models");
+const parks = require("./parks.js");
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -21,6 +22,23 @@ var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/parktest1";
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
+//
+// for (i = 0; i < parks.length; i++) {
+//   db.VAPark.create({
+//     name: parks[i].name,
+//     type: parks[i].type,
+//     img: parks[i].img,
+//     url: parks[i].url,
+//     description: parks[i].description,
+//     address: parks[i].address,
+//     visitor_center: parks[i].visitor_center,
+//     entrance_fee: parks[i].entrance_fee,
+//     hiking: parks[i].hiking,
+//     camping: parks[i].camping,
+//     comments: parks[i].comments
+//   });
+//   console.log("park added");
+// }
 
 // Start the API server
 app.listen(PORT, function() {
