@@ -11,7 +11,7 @@ const VAParksSchema = new Schema({
   img: { type: String },
   url: { type: String },
   description: { type: String },
-  addresss: { type: String },
+  address: { type: String },
   visitor_center: { type: Boolean },
   entrance_fee: { type: Number },
   hiking: { type: Boolean },

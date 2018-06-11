@@ -1,12 +1,25 @@
 import React from "react";
 
 const ParkSimple = props => (
-  <div key={props.id}>
-    <img url={props.imgURL} alt={props.name} />
-    <p> {props.description} </p>
-    <button onClick={props.viewOne} value={props.value}>
-      Details
-    </button>
+  <div
+    className="va-park"
+    onClick={props.viewOne}
+    value={props.id}
+    key={props.id}
+    style={{
+      fontSize: "2rem",
+      padding: "5% 15%",
+      color: "white",
+      height: "40vh",
+      backgroundImage: `linear-gradient(
+     rgba(43, 121, 134, 0.6),
+     rgba(43, 121, 134, 0.6)
+   ),url(${props.imgURL})`,
+      backgroundSize: "cover"
+    }}
+  >
+    <h3 value={props.id}> {props.name} </h3>
+    <p value={props.id}> {props.address} </p>
   </div>
 );
 

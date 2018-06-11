@@ -15,6 +15,22 @@ app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
 
+//CORS configuration
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "GET,HEAD,OPTIONS,POST,PUT,DELETE"
+  );
+  res.setHeader(
+    "Access-Control-Allow-Headers",
+    "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+  );
+  res.setHeader("Cache-Control", "no-cache");
+  next();
+});
+
 // If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/parktest1";
 
@@ -24,19 +40,7 @@ mongoose.Promise = Promise;
 mongoose.connect(MONGODB_URI);
 //
 // for (i = 0; i < parks.length; i++) {
-//   db.VAPark.create({
-//     name: parks[i].name,
-//     type: parks[i].type,
-//     img: parks[i].img,
-//     url: parks[i].url,
-//     description: parks[i].description,
-//     address: parks[i].address,
-//     visitor_center: parks[i].visitor_center,
-//     entrance_fee: parks[i].entrance_fee,
-//     hiking: parks[i].hiking,
-//     camping: parks[i].camping,
-//     comments: parks[i].comments
-//   });
+//   db.VAPark.create(parks[i]);
 //   console.log("park added");
 // }
 

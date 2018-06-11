@@ -1,0 +1,34 @@
+.container {
+  width: 90%;
+  margin: 60px auto;
+}
+
+.parks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+  grid-auto-rows: 350px;
+  grid-gap: 20px;
+  align-content: center;
+  justify-content: center;
+}
+
+.va-park:hover {
+  cursor: pointer;
+  background: rgba(43, 121, 134, 0.6) !important;
+}
+
+.add-comment {
+  margin-top: 2.5em;
+}
+
+.individual-park {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 20px;
+  align-content: center;
+  justify-content: center;
+}
+
+.individual-park img {
+  width: 100%;
+}
