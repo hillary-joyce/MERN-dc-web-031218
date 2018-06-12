@@ -61,7 +61,16 @@ class AllParksPage extends Component {
       comment: this.state.commentComment
     })
       .then(res => console.log("comment added"))
-      .then(this.showPark())
+      .then(
+        this.setState(
+          {
+            name: "",
+            rating: "",
+            comment: ""
+          },
+          () => this.showPark()
+        )
+      )
       .catch(err => console.log(err));
   };
   //Delete Comment
