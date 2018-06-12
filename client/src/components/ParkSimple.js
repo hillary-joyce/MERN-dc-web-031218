@@ -7,15 +7,15 @@ const ParkSimple = props => (
     value={props.id}
     key={props.id}
     style={{
-      fontSize: "2rem",
-      padding: "5% 15%",
+      fontSize: "2.5rem",
+      padding: "5% 10%",
       color: "white",
-      height: "40vh",
       backgroundImage: `linear-gradient(
      rgba(43, 121, 134, 0.6),
      rgba(43, 121, 134, 0.6)
    ),url(${props.imgURL})`,
-      backgroundSize: "cover"
+      backgroundSize: "cover",
+      borderRadius: "5px"
     }}
   >
     <h3 value={props.id}> {props.name} </h3>

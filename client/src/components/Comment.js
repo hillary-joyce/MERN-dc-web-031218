@@ -3,7 +3,7 @@ import React from "react";
 const Comment = props => (
   <div>
     <span>
-      <b>Name:</b> {props.name}
+      <b>Name:</b> {props.name}{" "}
     </span>
     <span>
       <b>Rating:</b> {props.rating}
